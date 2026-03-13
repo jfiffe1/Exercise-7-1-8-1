@@ -31,7 +31,6 @@ namespace GuitarShop.Controllers
                 products = context.Products
                     .OrderBy(p => p.ProductID).ToList();
             }
-           
             else if (id == "Strings")
             {
                 products = context.Products
@@ -45,16 +44,13 @@ namespace GuitarShop.Controllers
                     .OrderBy(p => p.ProductID).ToList();
             }
 
-   
             ViewBag.Categories = categories;
             ViewBag.SelectedCategoryName = id;
 
-   
             if (id == "Strings")
             {
                 ViewBag.SelectedCategoryName = "Strings";
             }
-
 
             return View(products);
         }
@@ -68,10 +64,8 @@ namespace GuitarShop.Controllers
 
             string imageFilename = product.Code + "_m.png";
 
-
             ViewBag.Categories = categories;
             ViewBag.ImageFilename = imageFilename;
-
 
             return View(product);
         }

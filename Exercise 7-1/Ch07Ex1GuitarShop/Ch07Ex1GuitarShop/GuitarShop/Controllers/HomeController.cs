@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic; 
 
 namespace GuitarShop.Controllers
 {
@@ -13,6 +14,21 @@ namespace GuitarShop.Controllers
         public IActionResult About()
         {
             return View();
+        }
+
+      
+        [Route("[action]")]
+        public IActionResult ContactUs()
+        {
+      
+            var contact = new Dictionary<string, string>
+            {
+                { "Phone", "555-123-4567" },
+                { "Email", "info@myguitarshop.com" }
+            };
+
+         
+            return View(contact);
         }
     }
 }
